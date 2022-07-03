@@ -1,6 +1,7 @@
 import express from "express"
 import expressLayouts from "express-ejs-layouts"
 import indexHandler from "../src/routes/index.route"
+import authHandler from "../src/routes/auth.route"
 
 const app = express()
 
@@ -14,5 +15,6 @@ app.use(expressLayouts)
 
 
 app.use(indexHandler)
+app.use('/accounts', authHandler)
 
 export default app;
