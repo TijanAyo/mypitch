@@ -10,7 +10,7 @@ app.set('layout', '../views/layouts/main.ejs')
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(express.static('dist'))
+app.use(express.static(__dirname + '/dist'))
 app.use(expressLayouts)
 
 
