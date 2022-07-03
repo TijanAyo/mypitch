@@ -9,7 +9,8 @@
     "start": "node dist/server.js",
     "build": "tsc",
     "dev": "nodemon --exec ts-node ./src/server.ts --mode development",
-    "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src"
+    "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
+    "deploy": "git add . && git commit -m Heroku && git push heroku main"
   },
   "dependencies": {
     "cors": "^2.8.5",
