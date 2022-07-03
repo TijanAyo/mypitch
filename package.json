@@ -11,6 +11,9 @@
     "postinstall": "tsc && mv -i -v ./src/public dist/ && rm -v -rf src",
     "deploy": "git add . && git commit -m Heroku && git push heroku main"
   },
+  "engines": {
+    "node": "16.13.1"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
