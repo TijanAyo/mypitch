@@ -1,8 +1,8 @@
-import express from "express"
-import expressLayouts from "express-ejs-layouts"
-import indexRoute from "../src/routes/index.route"
-import authRoute from "../src/routes/auth.route"
-import path from "path"
+const express = require("express")
+const expressLayouts = require( "express-ejs-layouts" )
+const indexRoute = require( "./routes/index.route")
+const authRoute = require( "./routes/auth.route")
+const path = require( "path" )
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -17,4 +17,4 @@ app.use(expressLayouts)
 app.use('/', indexRoute)
 app.use('/accounts', authRoute)
 
-export default app;
+module.exports = app

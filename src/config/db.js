@@ -1,7 +1,7 @@
-import mongoose from "mongoose"
+const mongoose = require('mongoose')
 require('dotenv').config()
 
-const dbURI = process.env.dbURI as string
+const dbURI = process.env.dbURI
 
 async function connectDB() {
     try{
@@ -14,4 +14,4 @@ async function connectDB() {
     }   
 }
 
-export default connectDB
+module.exports = connectDB

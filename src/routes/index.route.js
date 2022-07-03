@@ -1,7 +1,7 @@
-import express from "express"
-import {homePageHandler,
+const express = require('express')
+const {homePageHandler,
     aboutPageHandler,
-    servicePageHandler} from "../controllers/index.controller"
+    servicePageHandler} = require( "../controllers/index.controller" )
 const router = express.Router()
 
 router.get('/', homePageHandler);
@@ -9,4 +9,4 @@ router.get('/about', aboutPageHandler);
 router.get('/service', servicePageHandler);
 
 
-export default router
+module.exports = router
