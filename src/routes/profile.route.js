@@ -1,10 +1,19 @@
 const express = require('express')
-const { renderDashboard } = require('../controllers/profile.controller')
-const {authCheck} = require('../middleware/authcheck')
 const router = express.Router()
 
-// dashboard page
-router.get('/dashboard', authCheck, renderDashboard)
+
+const authCheck = (req, res, next) => {
+    if(!req.user){
+        res.redirect('/account/register')
+    }
+    else{
+        next()
+    }
+}
+
+router.get('/dashboard', authCheck, (req, res)=> {
+    return res.render('profile', {name: req.user.name})
+});
 
 
 module.exports = router
