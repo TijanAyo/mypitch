@@ -1,5 +1,6 @@
-const mongoose = require('mongoose')
 require('dotenv').config()
+
+const mongoose = require('mongoose')
 
 const dbURI = process.env.dbURI
 

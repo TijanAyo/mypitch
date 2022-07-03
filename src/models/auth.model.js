@@ -1,6 +1,6 @@
-import mongoose, {Schema, model} from "mongoose"
+const mongoose = require('mongoose')
 
-const authSchema = new Schema({
+const authSchema = new mongoose.Schema({
     first_name: {
         type: String
     },
