@@ -2,7 +2,7 @@
   "name": "myPitch",
   "version": "1.0.0",
   "description": "Let your pitch reach the right audience",
-  "main": "index.js",
+  "main": "server.js",
   "author": "Tijani Ayomide <ayomidetijani6@gmail.com>",
   "license": "MIT",
   "scripts": {
