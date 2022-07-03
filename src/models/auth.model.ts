@@ -8,7 +8,6 @@ interface User {
     googleId: String
 }
 
-
 const authSchema = new Schema<User>({
     first_name: {
         type: String
