@@ -1,4 +1,3 @@
-const { RESERVED_EVENTS } = require('socket.io/dist/socket')
 const Pitch = require('../models/pitch.model')
 
 // get pitch form page
