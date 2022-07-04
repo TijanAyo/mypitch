@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {listAllPitch, pitchForm, createPitch, } = require('../controllers/pitch.controller')
+const {listAllPitch, pitchForm, createPitch, getSinglePitch} = require('../controllers/pitch.controller')
 
 // GET: Form page
 // /pitch/form
@@ -13,6 +13,9 @@ router.post('/form', createPitch)
 // pitch/available-pitch
 router.get('/available-pitch', listAllPitch)
 
+// GET: Get a single pitch
+// pitch/form/:id
+router.get('/:id', getSinglePitch)
 
 
 module.exports = router

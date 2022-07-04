@@ -43,12 +43,27 @@ const listAllPitch = async (req, res) => {
     }
 }
 
+// Get a single pitch
+const getSinglePitch = async (req, res) => {
+    const pitch = await Pitch.findById(req.params.id)
+    try{
+        if(pitch == null){
+            return res.redirect('/pitch/available-pitch')
+        }
+        return res.render(`pitch_detail`, {pitch})
 
-// View pitch in more detailed manner
-
+    }catch(e){
+        console.log(e)
+        return res.status(500).json({
+            status: 'Failed',
+            message: 'Somthing went wrong',
+        });
+    }
+}
 
 module.exports = {
     pitchForm,
     createPitch,
-    listAllPitch
+    listAllPitch,
+    getSinglePitch
 }
