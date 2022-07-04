@@ -30,9 +30,19 @@ const createPitch = async (req, res) => {
 // list all pitch on page
 // GET
 const allAvailablePitch = async (req, res) => {
-    const pages = await Pitch.find().sort('-createdAt')
+    try{
+        const pitch = await Pitch.find().sort('-createdAt')
 
-    res.status(200).render('pitch')
+        if(pitch){
+            return res.status(200).render('pitch')
+        }
+        return res.status(400).send('Something went wrong')
+    }catch(e){
+        return res.status(500).json({
+            err: e
+        })
+    }
+    
 }
 
 
