@@ -1,7 +1,6 @@
 const Pitch = require('../models/pitch.model')
 
 // get pitch form page
-
 const renderPitchForm = (req, res) => {
     return res.render('create-pitch')
 }
@@ -27,7 +26,6 @@ const createPitch = async (req, res) => {
     }
 
 }
-
 
 // list all pitch on page
 // GET
