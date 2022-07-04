@@ -3,6 +3,7 @@ const expressLayouts = require( "express-ejs-layouts" )
 const indexRoute = require( "./routes/index.route")
 const authRoute = require( "./routes/auth.route")
 const profileRoute = require("./routes/profile.route")
+const pitchRoute = require('./routes/pitch.route')
 const session = require('express-session')
 const passport = require('passport')
 const passportSetup = require('./config/passport-setup')
@@ -38,5 +39,6 @@ app.use(passport.session());
 app.use('/', indexRoute)
 app.use('/account', authRoute)
 app.use('/profile', profileRoute)
+app.use('/pitch', pitchRoute)
 
 module.exports = app
