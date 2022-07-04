@@ -16,7 +16,7 @@ const createPitch = async (req, res) => {
         })
 
         if(form){
-            return res.status(201).redirect('/')
+            return res.status(201).redirect('/pitch/available-pitch')
         }
         return res.status(400).render('create-pitch')
     }catch(e){

@@ -7,7 +7,7 @@ const {allAvailablePitch, pitchForm, createPitch} = require('../controllers/pitc
 router.get('/form', pitchForm)
 
 // POST: Create a pitch 
-router.post('/create-pitch', createPitch)
+router.post('/form', createPitch)
 
 // GET: All available pitch in the database
 // pitch/available-pitch
