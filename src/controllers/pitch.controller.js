@@ -1,8 +1,8 @@
 const Pitch = require('../models/pitch.model')
 
 // get pitch form page
-const renderPitchForm = (req, res) => {
-    return res.render('create-pitch')
+const pitchForm = async (req, res) => {
+    return res.render('create_pitch.ejs')
 }
 
 // create pitch
@@ -30,19 +30,7 @@ const createPitch = async (req, res) => {
 // list all pitch on page
 // GET
 const allAvailablePitch = async (req, res) => {
-    try{
-        const pitch = await Pitch.find().sort('-createdAt')
-
-        if(pitch){
-            return res.status(200).render('pitch')
-        }
-        return res.status(400).send('Something went wrong')
-    }catch(e){
-        return res.status(500).json({
-            err: e
-        })
-    }
-    
+    return res.render('pitch.ejs')
 }
 
 
@@ -50,7 +38,7 @@ const allAvailablePitch = async (req, res) => {
 
 
 module.exports = {
-    renderPitchForm,
+    pitchForm,
     createPitch,
     allAvailablePitch
 }
