@@ -14,6 +14,4 @@ router.get('/available-pitch', allAvailablePitch)
 
 
 
-
-
 module.exports = router
