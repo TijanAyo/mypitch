@@ -8,29 +8,39 @@ const pitchForm = async (req, res) => {
 // create pitch
 // POST
 const createPitch = async (req, res) => {
-    try{
-        const {title, summary, description, link} = req.body
+    const {title, summary, description, link, image} = req.body
 
-        const form = await Pitch.create({
-            title, summary, description, link
-        })
+    const form = await Pitch.create({
+        title, 
+        summary, 
+        description, 
+        link, 
+        image
+    });
 
-        if(form){
-            return res.status(201).redirect('/pitch/available-pitch')
-        }
+    if(form){
+        return res.status(201).redirect('/pitch/available-pitch')
+    }else{
         return res.status(400).render('create-pitch')
-    }catch(e){
-        return res.status(500).json({
-            error: e
-        });
     }
-
 }
 
 // list all pitch on page
-// GET
-const allAvailablePitch = async (req, res) => {
-    return res.render('pitch.ejs')
+const listAllPitch = async (req, res) => {
+    const pitch = await Pitch.find().sort('-createdAt')
+    try{
+        if(pitch) {
+            return res.render('pitch.ejs', {pitch})
+        }else{
+            return res.status(400).render('pitch.ejs')
+        }
+    }catch(e){
+        console.log(e)
+        return res.status(500).json({
+            status: 'Failed',
+            message: 'Somthing went wrong',
+        });
+    }
 }
 
 
@@ -40,5 +50,5 @@ const allAvailablePitch = async (req, res) => {
 module.exports = {
     pitchForm,
     createPitch,
-    allAvailablePitch
+    listAllPitch
 }

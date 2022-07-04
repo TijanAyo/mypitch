@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {allAvailablePitch, pitchForm, createPitch} = require('../controllers/pitch.controller')
+const {listAllPitch, pitchForm, createPitch, } = require('../controllers/pitch.controller')
 
 // GET: Form page
 // /pitch/form
@@ -11,7 +11,7 @@ router.post('/form', createPitch)
 
 // GET: All available pitch in the database
 // pitch/available-pitch
-router.get('/available-pitch', allAvailablePitch)
+router.get('/available-pitch', listAllPitch)
 
 
 

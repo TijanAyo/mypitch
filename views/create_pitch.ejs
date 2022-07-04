@@ -41,35 +41,60 @@
         <!-- sidebar end -->
     
         <!-- main -->
-        <form method="post">
-          <label>
-            <p class="label-txt form-lable">Title</p>
-            <input type="text" class="input form-control">
-            <div class="line-box">
-              <div class="line"></div>
-            </div>
-          </label>
-          <label>
-            <p class="label-txt">Summary</p>
-            <input type="text" class="input form-control" name="summary">
-            <div class="line-box">
-              <div class="line"></div>
-            </div>
-          </label>
-          <label>
-            <p class="label-txt">Description</p>
-            <input type="textarea" class="input form-control" name="description">
-            <div class="line-box">
-              <div class="line"></div>
-            </div>
-          </label>
-          <label>
-              <p class="label-txt">Url</p>
-              <input type="text" class="input form-control" name="link">
+        <form class="form" method="post">
+          <div class="form-group">
+            <label>
+              <p class="label-txt form-label">Title</p>
+              <input type="text" class="input form-control" name="title">
               <div class="line-box">
                 <div class="line"></div>
               </div>
             </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <p class="label-txt form-label">Summary</p>
+              <input type="text" class="input form-control" name="summary">
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <p class="label-txt form-label">Description</p>
+              <textarea class="input form-control" name="description"></textarea>
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <p class="label-txt form-label">URL</p>
+              <input class="input form-control" type="text" placeholder="https://example.com" name="link">
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <p class="label-txt form-label">Image Link</p>
+              <input type="text" class="input form-control" name="link" placeholder="upload image link e.g: https://bit.ly/3aaBV7Z">
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </label>
+          </div>
+          <!--
+          <div class="form-group">
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Upload Image</label>
+              <input class="form-control" type="file" id="formFile">
+            </div>
+          </div>
+        -->
           <button type="submit">submit</button>
         </form>
       
