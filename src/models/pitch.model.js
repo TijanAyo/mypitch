@@ -14,13 +14,15 @@ const pitchSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    link: {
+    image: {
         type: String,
-        required: true
+        default: "https://bit.ly/3AlG17F"
+    },
+    link: {
+        type: Array
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
         ref: 'User'
     }
 

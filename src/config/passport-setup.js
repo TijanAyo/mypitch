@@ -20,7 +20,7 @@ passport.deserializeUser((id, done) => {
 passport.use(
     new googleStrategy({
         // options for strategy here
-        callbackURL: `https://hello-mypitch.herokuapp.com/account/google/redirect`,
+        callbackURL: `http://localhost:${process.env.PORT}/account/google/redirect`,
         clientID: process.env.googleClientID,
         clientSecret: process.env.googleSecretID
     }, (accessToken, secretToken, profile, done) =>{
